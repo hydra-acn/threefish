@@ -44,7 +44,9 @@ typedef struct Threefish1024Key {
 } Threefish1024Key;
 
 /// Initialize Threefish1024 key from 16 64bit words.
-inline void threefish1024_set_key(Threefish1024Key* key, const uint64_t* words)
+extern inline void threefish1024_set_key(
+    Threefish1024Key* key,
+    const uint64_t*   words)
 {
     uint64_t parity = KEY_SCHEDULE_CONST;
     size_t   i;
@@ -56,7 +58,7 @@ inline void threefish1024_set_key(Threefish1024Key* key, const uint64_t* words)
 }
 
 /// Overwrite Threefish1024 key with 0.
-inline void threefish1024_clear_key(Threefish1024Key* key)
+extern inline void threefish1024_clear_key(Threefish1024Key* key)
 {
     memset(key, 0, (THREEFISH_1024_WORDS + 1) * sizeof(uint64_t));
 }
