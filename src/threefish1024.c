@@ -32,10 +32,10 @@ OTHER DEALINGS IN THE SOFTWARE.
 #include "threefish.h"
 
 void threefish1024_encrypt(
-    Threefish1024Key* key,
-    uint64_t          tweak[2],
-    const uint64_t*   in,
-    uint64_t*         out)
+    const Threefish1024Key* key,
+    const uint64_t          tweak[2],
+    const uint64_t*         in,
+    uint64_t*               out)
 {
     // Cache the block, key, and (expanded) tweak
     uint64_t b0 = in[0], b1 = in[1], b2 = in[2], b3 = in[3], b4 = in[4],
@@ -714,10 +714,10 @@ void threefish1024_encrypt(
 }
 
 void threefish1024_decrypt(
-    Threefish1024Key* key,
-    uint64_t          tweak[2],
-    const uint64_t*   in,
-    uint64_t*         out)
+    const Threefish1024Key* key,
+    const uint64_t          tweak[2],
+    const uint64_t*         in,
+    uint64_t*               out)
 {
     // Cache the block, key, and tweak
     uint64_t b0 = in[0], b1 = in[1], b2 = in[2], b3 = in[3], b4 = in[4],

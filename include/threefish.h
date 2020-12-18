@@ -44,7 +44,7 @@ typedef struct Threefish1024Key {
 } Threefish1024Key;
 
 /// Initialize Threefish1024 key from 16 64bit words.
-inline void threefish1024_set_key(Threefish1024Key* key, uint64_t* words)
+inline void threefish1024_set_key(Threefish1024Key* key, const uint64_t* words)
 {
     uint64_t parity = KEY_SCHEDULE_CONST;
     size_t   i;
@@ -63,16 +63,16 @@ inline void threefish1024_clear_key(Threefish1024Key* key)
 
 /// in and out must both point to 16 64bit words.
 void threefish1024_encrypt(
-    Threefish1024Key* key,
-    uint64_t          tweak[2],
-    const uint64_t*   in,
-    uint64_t*         out);
+    const Threefish1024Key* key,
+    const uint64_t          tweak[2],
+    const uint64_t*         in,
+    uint64_t*               out);
 
 /// in and out must both point to 16 64bit words.
 void threefish1024_decrypt(
-    Threefish1024Key* key,
-    uint64_t          tweak[2],
-    const uint64_t*   in,
-    uint64_t*         out);
+    const Threefish1024Key* key,
+    const uint64_t          tweak[2],
+    const uint64_t*         in,
+    uint64_t*               out);
 
 #endif  // THREEFISH_H
