@@ -1,0 +1,17 @@
+BasedOnStyle: Google
+AlignConsecutiveDeclarations: true
+BreakBeforeBraces: WebKit
+IndentWidth: 4
+ConstructorInitializerIndentWidth: 4
+SpaceBeforeParens: false
+SpaceAfterCStyleCast: true
+SpaceAfterTemplateKeyword: false
+AccessModifierOffset: -4
+BreakConstructorInitializers: BeforeColon
+BreakInheritanceList: AfterColon
+AlignAfterOpenBracket: AlwaysBreak
+BinPackParameters: false
+BinPackArguments: false
+AllowAllParametersOfDeclarationOnNextLine: false
+ColumnLimit: 80
+
